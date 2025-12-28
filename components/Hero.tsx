@@ -133,7 +133,8 @@ export default function Hero() {
               {propertyMedia.videoUrl && (
                 <a
                   href="#video"
-                  className="absolute -bottom-6 sm:-bottom-8 right-0 sm:-right-4 lg:-right-8 w-28 sm:w-40 h-20 sm:h-28 rounded-xl sm:rounded-2xl overflow-hidden shadow-xl border-4 border-white group cursor-pointer hover:scale-105 transition-transform duration-300"
+                  className="absolute bottom-4 right-4 w-24 sm:w-32 aspect-video rounded-lg sm:rounded-xl overflow-hidden shadow-xl border-2 border-white hover:scale-105 transition-transform group"
+                  aria-label="Watch property video tour"
                 >
                   <video
                     src={propertyMedia.videoUrl}
@@ -141,12 +142,11 @@ export default function Hero() {
                     loop
                     muted
                     playsInline
-                    preload="metadata"
                     className="w-full h-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-black/20 flex items-center justify-center group-hover:bg-black/10 transition-colors">
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/90 flex items-center justify-center shadow-lg">
-                      <Play className="w-3 h-3 sm:w-4 sm:h-4 text-slate-700 ml-0.5" />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                    <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-white/90 flex items-center justify-center">
+                      <Play className="w-3 h-3 sm:w-4 sm:h-4 text-slate-800 ml-0.5" />
                     </div>
                   </div>
                 </a>
