@@ -69,7 +69,7 @@ export const agentInfo: AgentInfo = {
   headshotUrl: "/images/main-20headshot-clean.png",
   logoUrl: "/images/a.png",
   brokerageLogoUrl: "/images/carrasco-dark.png",
-  appleLogoUrl: "/images/apple-logo.png",
+  appleLogoUrl: "/images/buying-in-dallas-logo.png",
   buyUrl: "https://www.buywithapple.com/buy",
   sellUrl: "https://www.buywithapple.com/sell",
 }

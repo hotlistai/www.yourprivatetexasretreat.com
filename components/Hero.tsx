@@ -15,10 +15,10 @@ export default function Hero() {
           <a href="https://www.buywithapple.com" className="flex items-center">
             <Image
               src={agentInfo.appleLogoUrl || "/placeholder.svg"}
-              alt="Apple Real Estate"
-              width={120}
-              height={28}
-              className="h-6 sm:h-7 w-auto"
+              alt="Buying in Dallas"
+              width={180}
+              height={50}
+              className="h-10 sm:h-12 w-auto"
               priority
             />
           </a>
