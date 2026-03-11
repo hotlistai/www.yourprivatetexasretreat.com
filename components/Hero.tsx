@@ -18,7 +18,8 @@ export default function Hero() {
               alt="Apple Real Estate"
               width={120}
               height={28}
-              className="h-6 sm:h-7 w-auto"
+              className="h-6 sm:h-7"
+              style={{ width: "auto", height: "auto" }}
               priority
             />
           </a>
