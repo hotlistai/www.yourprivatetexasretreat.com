@@ -33,16 +33,16 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <span className="text-xs text-slate-400">Brokered by</span>
+        <div className="mt-8 pt-6 border-t border-slate-100 flex flex-col items-center gap-6">
+          <div className="flex flex-col items-center gap-2">
+            <span className="text-xs text-slate-400 uppercase tracking-wider">Brokered by</span>
             <img
               src={agentInfo.brokerageLogoUrl || "/placeholder.svg"}
               alt={agentInfo.brokerage}
-              className="h-3 opacity-50"
+              className="h-10 sm:h-12"
             />
           </div>
-          <p className="text-xs text-slate-400">© {new Date().getFullYear()} Apple Real Estate. All rights reserved.</p>
+          <p className="text-xs text-slate-400">© {new Date().getFullYear()} Buying in Dallas. All rights reserved.</p>
         </div>
       </div>
     </footer>

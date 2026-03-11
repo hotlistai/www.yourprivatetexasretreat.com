@@ -53,12 +53,12 @@ export default function AgentSection() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-slate-800 flex items-center justify-center gap-3 opacity-50">
-          <span className="text-xs text-slate-500">Brokered by</span>
+        <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col items-center justify-center gap-3">
+          <span className="text-xs text-slate-500 uppercase tracking-wider">Brokered by</span>
           <img
             src={agentInfo.brokerageLogoUrl || "/placeholder.svg"}
             alt={agentInfo.brokerage}
-            className="h-4 invert"
+            className="h-8 invert brightness-200"
           />
         </div>
       </div>
