@@ -8,30 +8,32 @@ export default function AgentSection() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Agent Card */}
           <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
-            <img
-              src={agentInfo.headshotUrl || "/placeholder.svg"}
-              alt={agentInfo.name}
-              className="w-32 h-32 rounded-2xl object-cover shadow-xl"
-            />
+            <div className="relative">
+              <img
+                src={agentInfo.headshotUrl || "/placeholder.svg"}
+                alt={agentInfo.name}
+                className="w-36 h-36 rounded-2xl object-cover shadow-xl ring-4 ring-slate-800"
+              />
+            </div>
             <div className="text-center sm:text-left">
               <img
-                src={agentInfo.logoUrl || "/placeholder.svg"}
-                alt="Apple Real Estate"
-                className="h-6 mb-3 mx-auto sm:mx-0"
+                src={agentInfo.appleLogoUrl || "/placeholder.svg"}
+                alt="Buying in Dallas"
+                className="h-9 mb-4 mx-auto sm:mx-0 brightness-0 invert"
               />
-              <h3 className="text-2xl font-semibold mb-2">{agentInfo.name}</h3>
-              <p className="text-slate-400 mb-4">{agentInfo.tagline}</p>
+              <h3 className="text-2xl font-semibold mb-1">{agentInfo.name}</h3>
+              <p className="text-slate-400 text-sm mb-4">{agentInfo.tagline}</p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
                   href={`tel:${formatPhoneForLink(agentInfo.phone)}`}
-                  className="inline-flex items-center justify-center gap-2 bg-white text-slate-900 px-5 py-2.5 rounded-full text-sm font-medium hover:bg-slate-100 transition-colors"
+                  className="inline-flex items-center justify-center gap-2 bg-white text-slate-900 px-6 py-2.5 rounded-full text-sm font-medium hover:bg-slate-100 transition-colors"
                 >
                   <Phone className="w-4 h-4" />
-                  Call
+                  Call Johnny
                 </a>
                 <a
                   href={`mailto:${agentInfo.email}`}
-                  className="inline-flex items-center justify-center gap-2 border border-slate-700 px-5 py-2.5 rounded-full text-sm font-medium hover:bg-slate-800 transition-colors"
+                  className="inline-flex items-center justify-center gap-2 border border-slate-600 px-6 py-2.5 rounded-full text-sm font-medium hover:bg-slate-800 transition-colors"
                 >
                   <Mail className="w-4 h-4" />
                   Email
@@ -53,12 +55,12 @@ export default function AgentSection() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-slate-800 flex items-center justify-center gap-3 opacity-50">
-          <span className="text-xs text-slate-500">Brokered by</span>
+        <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col items-center justify-center gap-3">
+          <span className="text-xs text-slate-500 uppercase tracking-wider">Brokered by</span>
           <img
             src={agentInfo.brokerageLogoUrl || "/placeholder.svg"}
             alt={agentInfo.brokerage}
-            className="h-4 invert"
+            className="h-8 invert brightness-200"
           />
         </div>
       </div>

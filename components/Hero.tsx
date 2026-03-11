@@ -12,13 +12,13 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Nav */}
         <nav className="flex items-center justify-between py-4 sm:py-6">
-          <a href="https://www.buywithapple.com" className="flex items-center">
+          <a href="https://www.buyingindallas.com" className="flex items-center">
             <Image
               src={agentInfo.appleLogoUrl || "/placeholder.svg"}
-              alt="Apple Real Estate"
-              width={120}
-              height={28}
-              className="h-6 sm:h-7 w-auto"
+              alt="Buying in Dallas"
+              width={180}
+              height={50}
+              className="h-10 sm:h-12 w-auto"
               priority
             />
           </a>

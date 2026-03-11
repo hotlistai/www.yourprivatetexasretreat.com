@@ -62,16 +62,16 @@ export type AgentInfo = {
 // ======================
 export const agentInfo: AgentInfo = {
   name: "Johnny Apple",
-  email: "info@buywithapple.com",
+  email: "info@buyingindallas.com",
   phone: "(469) 569-2007",
   tagline: "People-first, tech-smart real estate in North Dallas.",
   brokerage: "Carrasco Real Estate Co.",
-  headshotUrl: "/images/main-20headshot-clean.png",
+  headshotUrl: "/images/johnny-apple-headshot.jpg",
   logoUrl: "/images/a.png",
-  brokerageLogoUrl: "/images/carrasco-dark.png",
-  appleLogoUrl: "/images/apple-logo.png",
-  buyUrl: "https://www.buywithapple.com/buy",
-  sellUrl: "https://www.buywithapple.com/sell",
+  brokerageLogoUrl: "/images/carrasco-logo.png",
+  appleLogoUrl: "/images/buying-in-dallas-logo.png",
+  buyUrl: "https://www.buyingindallas.com/buy",
+  sellUrl: "https://www.buyingindallas.com/sell",
 }
 
 // ======================
