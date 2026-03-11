@@ -62,7 +62,7 @@ export type AgentInfo = {
 // ======================
 export const agentInfo: AgentInfo = {
   name: "Johnny Apple",
-  email: "info@buywithapple.com",
+  email: "info@buyingindallas.com",
   phone: "(469) 569-2007",
   tagline: "People-first, tech-smart real estate in North Dallas.",
   brokerage: "Carrasco Real Estate Co.",
