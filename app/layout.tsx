@@ -13,9 +13,9 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://your-domain.vercel.app"),
-  title: `${propertyDetails.address} | ${propertyDetails.city}, ${propertyDetails.state} | Apple Real Estate`,
-  description: `${propertyDetails.beds} bed, ${propertyDetails.baths}.${propertyDetails.halfBaths || 0} bath home on ${propertyDetails.lotSize} in ${propertyDetails.city}, ${propertyDetails.state}. ${propertyDetails.price}. Features include 720 sq ft workshop, solar panels, private stocked fishing pond. NO HOA. Listed by Johnny Apple at Apple Real Estate.`,
+  metadataBase: new URL("https://yourprivatetexasretreat.com"),
+  title: `${propertyDetails.address} | ${propertyDetails.city}, ${propertyDetails.state} | Buying in Dallas`,
+  description: `${propertyDetails.beds} bed, ${propertyDetails.baths}.${propertyDetails.halfBaths || 0} bath home on ${propertyDetails.lotSize} in ${propertyDetails.city}, ${propertyDetails.state}. ${propertyDetails.price}. Features include 720 sq ft workshop, solar panels, private stocked fishing pond. NO HOA. Listed by Johnny Apple at Buying in Dallas.`,
   keywords: [
     "Caddo Mills real estate",
     "Caddo Mills homes for sale",
@@ -25,13 +25,13 @@ export const metadata: Metadata = {
     "rural Texas homes",
     "no HOA homes Texas",
     "homes with pond",
-    "Apple Real Estate",
+    "Buying in Dallas",
     "Johnny Apple realtor",
     "Hunt County real estate",
   ],
-  authors: [{ name: "Johnny Apple", url: "https://www.buywithapple.com" }],
-  creator: "Apple Real Estate",
-  publisher: "Apple Real Estate",
+  authors: [{ name: "Johnny Apple", url: "https://www.buyingindallas.com" }],
+  creator: "Buying in Dallas",
+  publisher: "Buying in Dallas",
   robots: {
     index: true,
     follow: true,
@@ -56,14 +56,14 @@ export const metadata: Metadata = {
     ],
     type: "website",
     locale: "en_US",
-    siteName: "Apple Real Estate",
+    siteName: "Buying in Dallas",
   },
   twitter: {
     card: "summary_large_image",
-    title: `${propertyDetails.address} | Apple Real Estate`,
+    title: `${propertyDetails.address} | Buying in Dallas`,
     description: `${propertyDetails.beds}bd/${propertyDetails.baths}ba on ${propertyDetails.lotSize} - ${propertyDetails.price}`,
     images: [propertyMedia.heroImage],
-    creator: "@buywithapple",
+    creator: "@buyingindallas",
   },
   icons: {
     icon: "/images/favicon.png",
@@ -93,7 +93,7 @@ export default function RootLayout({
     "@type": "RealEstateListing",
     name: `${propertyDetails.address}, ${propertyDetails.city}, ${propertyDetails.state} ${propertyDetails.zip}`,
     description: propertyDetails.description,
-    url: "https://your-domain.vercel.app",
+    url: "https://yourprivatetexasretreat.com",
     image: propertyMedia.heroImage,
     offers: {
       "@type": "Offer",

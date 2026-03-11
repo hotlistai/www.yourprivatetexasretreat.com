@@ -6,8 +6,8 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
-            <a href="https://www.buywithapple.com">
-              <img src={agentInfo.appleLogoUrl || "/placeholder.svg"} alt="Apple Real Estate" className="h-5" />
+            <a href="https://www.buyingindallas.com">
+              <img src={agentInfo.appleLogoUrl || "/placeholder.svg"} alt="Buying in Dallas" className="h-8" />
             </a>
           </div>
 
