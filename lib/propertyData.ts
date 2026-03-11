@@ -89,7 +89,7 @@ export const propertyMedia: PropertyMedia = {
     "/images/brian-20photos-2023.jpeg", // Guest bedroom with views
     "/images/brian-20photos-2027.jpeg", // Pond with bluebonnets - lifestyle
   ],
-  videoUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/drone-final-7uI9fK1vJd8mLDpLzWejus5VJUgdYW.mov",
+  videoUrl: "https://blog.hotlistdigital.com/wp-content/uploads/2026/03/Video.mov",
 }
 
 // ======================
