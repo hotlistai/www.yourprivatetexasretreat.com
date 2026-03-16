@@ -12,9 +12,7 @@ Any changes you make to your deployed app will be automatically pushed to this r
 
 ## Deployment
 
-Your project is live at:
-
-**[https://vercel.com/hotlist-ai/v0-real-estate-landing-page](https://vercel.com/hotlist-ai/v0-real-estate-landing-page)**
+This repository is now used as the canonical local repo for the live 1501 The Rock / Rosie Carrasco Cox site.
 
 ## Build your app
 

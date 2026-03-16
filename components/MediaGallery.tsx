@@ -1,24 +1,39 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import { propertyMedia, propertyDetails } from "@/lib/propertyData"
 import { ChevronLeft, ChevronRight, X, Play, Pause, Volume2, VolumeX } from "lucide-react"
 
 export default function MediaGallery() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null)
-  const [videoPlaying, setVideoPlaying] = useState(true)
+  const [videoPlaying, setVideoPlaying] = useState(false)
   const [videoMuted, setVideoMuted] = useState(true)
+  const videoRef = useRef<HTMLVideoElement | null>(null)
   const images = propertyMedia.gallery
   const hasVideo = !!propertyMedia.videoUrl
+
+  useEffect(() => {
+    if (!hasVideo || !videoRef.current) return
+
+    const video = videoRef.current
+    video
+      .play()
+      .then(() => setVideoPlaying(true))
+      .catch(() => setVideoPlaying(false))
+  }, [hasVideo])
 
   const handleVideoToggle = (video: HTMLVideoElement) => {
     if (videoPlaying) {
       video.pause()
+      setVideoPlaying(false)
     } else {
-      video.play()
+      video
+        .play()
+        .then(() => setVideoPlaying(true))
+        .catch(() => setVideoPlaying(false))
+      return
     }
-    setVideoPlaying(!videoPlaying)
   }
 
   return (
@@ -33,26 +48,30 @@ export default function MediaGallery() {
           <div id="video" className="mb-6 sm:mb-8">
             <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl shadow-slate-200/50 group">
               <video
-                id="property-video"
-                src={propertyMedia.videoUrl}
+                ref={videoRef}
                 autoPlay
                 loop
                 muted={videoMuted}
                 playsInline
-                preload="metadata"
+                controls
+                preload="auto"
+                poster={propertyMedia.videoPosterUrl ?? propertyMedia.heroImage}
                 className="w-full aspect-video object-cover"
-              />
+              >
+                <source src={propertyMedia.videoUrl} type="video/mp4" />
+              </video>
 
               {/* Video controls overlay */}
-              <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 bg-gradient-to-t from-black/50 to-transparent opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity">
+              <div className="pointer-events-none absolute bottom-0 left-0 right-0 p-4 sm:p-6 bg-gradient-to-t from-black/50 to-transparent opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2 sm:gap-3">
                     <button
                       onClick={() => {
-                        const video = document.getElementById("property-video") as HTMLVideoElement
+                        const video = videoRef.current
+                        if (!video) return
                         handleVideoToggle(video)
                       }}
-                      className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/20 backdrop-blur flex items-center justify-center hover:bg-white/30 transition-colors"
+                      className="pointer-events-auto w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/20 backdrop-blur flex items-center justify-center hover:bg-white/30 transition-colors"
                       aria-label={videoPlaying ? "Pause video" : "Play video"}
                     >
                       {videoPlaying ? (
@@ -62,8 +81,14 @@ export default function MediaGallery() {
                       )}
                     </button>
                     <button
-                      onClick={() => setVideoMuted(!videoMuted)}
-                      className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/20 backdrop-blur flex items-center justify-center hover:bg-white/30 transition-colors"
+                      onClick={() => {
+                        const nextMuted = !videoMuted
+                        setVideoMuted(nextMuted)
+                        if (videoRef.current) {
+                          videoRef.current.muted = nextMuted
+                        }
+                      }}
+                      className="pointer-events-auto w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/20 backdrop-blur flex items-center justify-center hover:bg-white/30 transition-colors"
                       aria-label={videoMuted ? "Unmute video" : "Mute video"}
                     >
                       {videoMuted ? (

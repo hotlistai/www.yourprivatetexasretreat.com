@@ -17,8 +17,8 @@ export default function AgentSection() {
             </div>
             <div className="text-center sm:text-left">
               <img
-                src={agentInfo.appleLogoUrl || "/placeholder.svg"}
-                alt="Buying in Dallas"
+                src={agentInfo.brandLogoUrl || "/placeholder.svg"}
+                alt={agentInfo.brokerage}
                 className="h-9 mb-4 mx-auto sm:mx-0 brightness-0 invert"
               />
               <h3 className="text-2xl font-semibold mb-1">{agentInfo.name}</h3>
@@ -29,7 +29,7 @@ export default function AgentSection() {
                   className="inline-flex items-center justify-center gap-2 bg-white text-slate-900 px-6 py-2.5 rounded-full text-sm font-medium hover:bg-slate-100 transition-colors"
                 >
                   <Phone className="w-4 h-4" />
-                  Call Johnny
+                  Call Rosie
                 </a>
                 <a
                   href={`mailto:${agentInfo.email}`}

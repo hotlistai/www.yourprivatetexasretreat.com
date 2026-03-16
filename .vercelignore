@@ -1,0 +1,12 @@
+.git
+.gitignore
+.next
+.open-next
+.wrangler
+.vercel
+node_modules
+bin
+open-next.config.ts
+wrangler.jsonc
+*.tsbuildinfo
+next-env.d.ts

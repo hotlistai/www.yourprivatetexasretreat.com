@@ -3,7 +3,9 @@ import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
-import { propertyDetails, propertyMedia } from "@/lib/propertyData"
+import { agentInfo, propertyDetails, propertyMedia } from "@/lib/propertyData"
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://hotlist-1501-the-rock-rockwall.morning-mouse-824a.workers.dev"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -13,25 +15,24 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://yourprivatetexasretreat.com"),
-  title: `${propertyDetails.address} | ${propertyDetails.city}, ${propertyDetails.state} | Buying in Dallas`,
-  description: `${propertyDetails.beds} bed, ${propertyDetails.baths}.${propertyDetails.halfBaths || 0} bath home on ${propertyDetails.lotSize} in ${propertyDetails.city}, ${propertyDetails.state}. ${propertyDetails.price}. Features include 720 sq ft workshop, solar panels, private stocked fishing pond. NO HOA. Listed by Johnny Apple at Buying in Dallas.`,
+  metadataBase: new URL(siteUrl),
+  title: `${propertyDetails.address} | ${propertyDetails.city}, ${propertyDetails.state}`,
+  description: propertyDetails.subheadline,
   keywords: [
-    "Caddo Mills real estate",
-    "Caddo Mills homes for sale",
-    "Texas acreage for sale",
-    "Caddo Mills ISD homes",
-    "workshop property Texas",
-    "rural Texas homes",
-    "no HOA homes Texas",
-    "homes with pond",
-    "Buying in Dallas",
-    "Johnny Apple realtor",
-    "Hunt County real estate",
+    "1501 The Rock",
+    "Rockwall luxury real estate",
+    "Rockwall acreage estate",
+    "Rockwall homes for sale",
+    "gated estate Rockwall TX",
+    "luxury property Rockwall ISD",
+    "Texas modern architectural estate",
+    "estate with pond and creek",
+    "Carrasco Real Estate Co.",
+    "Rosie Carrasco Cox",
   ],
-  authors: [{ name: "Johnny Apple", url: "https://www.buyingindallas.com" }],
-  creator: "Buying in Dallas",
-  publisher: "Buying in Dallas",
+  authors: [{ name: agentInfo.name, url: agentInfo.websiteUrl }],
+  creator: agentInfo.name,
+  publisher: agentInfo.brokerage,
   robots: {
     index: true,
     follow: true,
@@ -44,36 +45,32 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: `${propertyDetails.address} | ${propertyDetails.city}, ${propertyDetails.state}`,
-    description: `${propertyDetails.beds} bed, ${propertyDetails.baths} bath custom brick home on ${propertyDetails.lotSize}. ${propertyDetails.price}. NO HOA, 720 sqft workshop, solar panels, private stocked fishing pond.`,
+    title: `${propertyDetails.address} | ${propertyDetails.headline}`,
+    description: propertyDetails.subheadline,
     images: [
       {
         url: propertyMedia.heroImage,
         width: 1200,
         height: 630,
-        alt: `${propertyDetails.address} - Beautiful Texas home on ${propertyDetails.lotSize}`,
+        alt: `${propertyDetails.address} - ${propertyDetails.headline}`,
       },
     ],
     type: "website",
     locale: "en_US",
-    siteName: "Buying in Dallas",
+    siteName: `${propertyDetails.address} | ${propertyDetails.city}, ${propertyDetails.state}`,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${propertyDetails.address} | Buying in Dallas`,
-    description: `${propertyDetails.beds}bd/${propertyDetails.baths}ba on ${propertyDetails.lotSize} - ${propertyDetails.price}`,
+    title: `${propertyDetails.address} | ${propertyDetails.city}, ${propertyDetails.state}`,
+    description: propertyDetails.subheadline,
     images: [propertyMedia.heroImage],
-    creator: "@buyingindallas",
   },
   icons: {
     icon: "/images/favicon.png",
     shortcut: "/images/favicon.png",
     apple: "/images/favicon.png",
   },
-  alternates: {
-    canonical: "/",
-  },
-    generator: 'v0.app'
+  generator: "v0.app",
 }
 
 export const viewport: Viewport = {
@@ -93,7 +90,6 @@ export default function RootLayout({
     "@type": "RealEstateListing",
     name: `${propertyDetails.address}, ${propertyDetails.city}, ${propertyDetails.state} ${propertyDetails.zip}`,
     description: propertyDetails.description,
-    url: "https://yourprivatetexasretreat.com",
     image: propertyMedia.heroImage,
     offers: {
       "@type": "Offer",
@@ -108,11 +104,6 @@ export default function RootLayout({
       postalCode: propertyDetails.zip,
       addressCountry: "US",
     },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 33.0632,
-      longitude: -96.2249,
-    },
     numberOfRooms: propertyDetails.beds,
     numberOfBathroomsTotal: propertyDetails.baths + (propertyDetails.halfBaths || 0) * 0.5,
     floorSize: {
@@ -122,7 +113,7 @@ export default function RootLayout({
     },
     lotSize: {
       "@type": "QuantitativeValue",
-      value: 7.56,
+      value: propertyDetails.lotAcres,
       unitCode: "ACR",
     },
     yearBuilt: propertyDetails.yearBuilt,
@@ -131,10 +122,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <head>
-        <link rel="preconnect" href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com" />
-        <link rel="preconnect" href="https://my.matterport.com" />
-        <link rel="dns-prefetch" href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com" />
-        <link rel="dns-prefetch" href="https://my.matterport.com" />
         {/* JSON-LD structured data */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>
