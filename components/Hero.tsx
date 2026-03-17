@@ -3,10 +3,6 @@ import { propertyDetails, propertyMedia, agentInfo, formatPhoneForLink } from "@
 import { Phone, ArrowRight, Bed, Bath, Maximize, TreePine, Play } from "lucide-react"
 
 export default function Hero() {
-  const bathroomLabel = propertyDetails.halfBaths
-    ? `${propertyDetails.baths}.${propertyDetails.halfBaths} Baths`
-    : `${propertyDetails.baths} Baths`
-
   return (
     <header className="relative min-h-screen bg-gradient-to-b from-slate-50 to-white overflow-hidden">
       {/* Soft gradient orbs */}
@@ -16,28 +12,28 @@ export default function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Nav */}
         <nav className="flex items-center justify-between py-4 sm:py-6">
-          <a href={agentInfo.websiteUrl} className="flex items-center">
+          <a href="https://www.buyingindallas.com" className="flex items-center">
             <Image
-              src={agentInfo.brandLogoUrl || "/placeholder.svg"}
-              alt={agentInfo.brokerage}
-              width={200}
+              src={agentInfo.appleLogoUrl || "/placeholder.svg"}
+              alt="Buying in Dallas"
+              width={180}
               height={50}
-              className="h-10 sm:h-12 w-auto object-contain"
+              className="h-10 sm:h-12 w-auto"
               priority
             />
           </a>
           <div className="flex items-center gap-3 sm:gap-6">
             <a
-              href={agentInfo.websiteUrl}
+              href={agentInfo.buyUrl}
               className="hidden sm:inline text-sm text-slate-500 hover:text-slate-900 transition-colors"
             >
-              Website
+              Buy
             </a>
             <a
-              href={agentInfo.aboutUrl}
+              href={agentInfo.sellUrl}
               className="hidden sm:inline text-sm text-slate-500 hover:text-slate-900 transition-colors"
             >
-              About Rosie
+              Sell
             </a>
             <a
               href={`tel:${formatPhoneForLink(agentInfo.phone)}`}
@@ -55,16 +51,17 @@ export default function Hero() {
           <div className="order-2 lg:order-1">
             <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur border border-slate-100 rounded-full px-3 sm:px-4 py-2 mb-4 sm:mb-6 shadow-sm">
               <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
-              <span className="text-xs sm:text-sm text-slate-600">{propertyDetails.heroTag}</span>
+              <span className="text-xs sm:text-sm text-slate-600">Available Now</span>
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold text-slate-800 tracking-tight leading-tight mb-3 sm:mb-4">
+              Your Private
+              <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-slate-600 to-slate-400">
-                {propertyDetails.headline}
+                Texas Retreat
               </span>
             </h1>
 
-            <p className="max-w-2xl text-base sm:text-lg text-slate-500 mb-4 sm:mb-6">{propertyDetails.subheadline}</p>
             <p className="text-base sm:text-lg text-slate-500 mb-1 sm:mb-2">{propertyDetails.address}</p>
             <p className="text-sm sm:text-base text-slate-400 mb-6 sm:mb-8">
               {propertyDetails.city}, {propertyDetails.state} {propertyDetails.zip}
@@ -83,7 +80,9 @@ export default function Hero() {
               </div>
               <div className="flex items-center gap-1.5 sm:gap-2 bg-white rounded-full px-3 sm:px-4 py-1.5 sm:py-2 shadow-sm border border-slate-100">
                 <Bath className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-slate-400" />
-                <span className="text-xs sm:text-sm font-medium text-slate-700">{bathroomLabel}</span>
+                <span className="text-xs sm:text-sm font-medium text-slate-700">
+                  {propertyDetails.baths}.{propertyDetails.halfBaths} Baths
+                </span>
               </div>
               <div className="flex items-center gap-1.5 sm:gap-2 bg-white rounded-full px-3 sm:px-4 py-1.5 sm:py-2 shadow-sm border border-slate-100">
                 <Maximize className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-slate-400" />
@@ -111,7 +110,7 @@ export default function Hero() {
                 className="btn-secondary inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3.5 sm:py-4 rounded-full text-sm sm:text-base font-medium"
               >
                 <Phone className="w-4 h-4" />
-                Call Rosie
+                Call Johnny
               </a>
             </div>
           </div>
@@ -138,16 +137,13 @@ export default function Hero() {
                   aria-label="Watch property video tour"
                 >
                   <video
+                    src={propertyMedia.videoUrl}
                     autoPlay
                     loop
                     muted
                     playsInline
-                    preload="auto"
-                    poster={propertyMedia.videoPosterUrl ?? propertyMedia.heroImage}
                     className="w-full h-full object-cover"
-                  >
-                    <source src={propertyMedia.videoUrl} type="video/mp4" />
-                  </video>
+                  />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors flex items-center justify-center">
                     <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-white/90 flex items-center justify-center">
                       <Play className="w-3 h-3 sm:w-4 sm:h-4 text-slate-800 ml-0.5" />
@@ -158,8 +154,8 @@ export default function Hero() {
 
               {/* Floating badge - hidden on small mobile */}
               <div className="hidden sm:block absolute -bottom-6 -left-6 bg-white rounded-2xl p-4 shadow-xl border border-slate-100">
-                <p className="text-xs text-slate-400 mb-1">No HOA + AG</p>
-                <p className="text-sm font-medium text-slate-700">Luxury acreage without restrictions</p>
+                <p className="text-xs text-slate-400 mb-1">No HOA</p>
+                <p className="text-sm font-medium text-slate-700">Freedom to live your way</p>
               </div>
             </div>
           </div>

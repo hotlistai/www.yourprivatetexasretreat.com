@@ -6,17 +6,17 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="flex items-center gap-4">
-            <a href={agentInfo.websiteUrl}>
-              <img src={agentInfo.brandLogoUrl || "/placeholder.svg"} alt={agentInfo.brokerage} className="h-8" />
+            <a href="https://www.buyingindallas.com">
+              <img src={agentInfo.appleLogoUrl || "/placeholder.svg"} alt="Buying in Dallas" className="h-8" />
             </a>
           </div>
 
           <div className="flex items-center gap-6">
-            <a href={agentInfo.websiteUrl} className="text-sm text-slate-500 hover:text-slate-900 transition-colors">
-              Website
+            <a href={agentInfo.buyUrl} className="text-sm text-slate-500 hover:text-slate-900 transition-colors">
+              Buy
             </a>
-            <a href={agentInfo.aboutUrl} className="text-sm text-slate-500 hover:text-slate-900 transition-colors">
-              About Rosie
+            <a href={agentInfo.sellUrl} className="text-sm text-slate-500 hover:text-slate-900 transition-colors">
+              Sell
             </a>
             <a href="#contact" className="text-sm text-slate-500 hover:text-slate-900 transition-colors">
               Contact
@@ -27,7 +27,9 @@ export default function Footer() {
             <p className="text-sm text-slate-500">
               {agentInfo.name} · {agentInfo.phone}
             </p>
-            <p className="text-xs text-slate-400 mt-1">{agentInfo.serviceAreas}</p>
+            <p className="text-xs text-slate-400 mt-1">
+              Serving Frisco, Plano, McKinney, Allen, Prosper, Celina & Caddo Mills
+            </p>
           </div>
         </div>
 
@@ -40,7 +42,7 @@ export default function Footer() {
               className="h-10 sm:h-12"
             />
           </div>
-          <p className="text-xs text-slate-400">© {new Date().getFullYear()} {agentInfo.brokerage}. All rights reserved.</p>
+          <p className="text-xs text-slate-400">© {new Date().getFullYear()} Buying in Dallas. All rights reserved.</p>
         </div>
       </div>
     </footer>

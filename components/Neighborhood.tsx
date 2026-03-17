@@ -10,7 +10,7 @@ export default function Neighborhood() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-2xl font-semibold text-slate-800 mb-2">Life in {neighborhood || propertyDetails.city}</h2>
-          <p className="text-slate-500">Estate privacy without giving up the best parts of living in Rockwall</p>
+          <p className="text-slate-500">A perfect blend of privacy and convenience</p>
         </div>
 
         <div className="grid sm:grid-cols-3 gap-6">
@@ -32,7 +32,9 @@ export default function Neighborhood() {
             <MapPin className="w-6 h-6 text-slate-400 mb-4" />
             <h3 className="text-lg font-semibold text-slate-800 mb-4">Location</h3>
             <ul className="space-y-2 text-sm text-slate-600">
-              {propertyDetails.locationHighlights?.map((item) => <li key={item}>{item}</li>)}
+              <li>Hunt County, Texas</li>
+              <li>Minutes from Highway 36</li>
+              <li>Easy access to Greenville</li>
             </ul>
           </div>
 
@@ -41,7 +43,9 @@ export default function Neighborhood() {
             <TreePine className="w-6 h-6 text-slate-400 mb-4" />
             <h3 className="text-lg font-semibold text-slate-800 mb-4">Lifestyle</h3>
             <ul className="space-y-2 text-sm text-slate-600">
-              {propertyDetails.lifestyleHighlights?.map((item) => <li key={item}>{item}</li>)}
+              <li>Private rural retreat</li>
+              <li>Room for livestock & RVs</li>
+              <li>No HOA restrictions</li>
             </ul>
           </div>
         </div>

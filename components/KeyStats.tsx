@@ -1,15 +1,15 @@
 import { propertyDetails } from "@/lib/propertyData"
-import { Ban, Car, GraduationCap, Home, Shield, TreePine, UtensilsCrossed, Waves } from "lucide-react"
+import { TreePine, Home, Flame, Car, Sun, Wrench, Zap, Droplets } from "lucide-react"
 
 const stats = [
-  { icon: Shield, label: "Estate", value: "Privately Gated", highlight: true },
-  { icon: TreePine, label: "Acreage", value: propertyDetails.lotSize || "11.96 Acres" },
-  { icon: Waves, label: "Pool + Spa", value: "Resort Style" },
-  { icon: UtensilsCrossed, label: "Chef Kitchen", value: "16ft Island" },
-  { icon: Car, label: "Garage", value: "6-Car + Shop" },
-  { icon: Home, label: "Built", value: propertyDetails.yearBuilt?.toString() || "2018" },
-  { icon: GraduationCap, label: "Schools", value: propertyDetails.schools?.district || "Rockwall ISD" },
-  { icon: Ban, label: "HOA", value: "None" },
+  { icon: Sun, label: "Solar Panels", value: "2023", highlight: true },
+  { icon: Wrench, label: "Workshop", value: "720 sqft" },
+  { icon: TreePine, label: "Acreage", value: propertyDetails.lotSize || "7.56" },
+  { icon: Flame, label: "Fireplace", value: "Wood Burning" },
+  { icon: Car, label: "Garage", value: "2-Car" },
+  { icon: Home, label: "Built", value: propertyDetails.yearBuilt?.toString() || "1998" },
+  { icon: Zap, label: "Electric", value: "Co-op" },
+  { icon: Droplets, label: "Water", value: "Co-op" },
 ]
 
 export default function KeyStats() {
@@ -18,7 +18,7 @@ export default function KeyStats() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-2xl font-semibold text-slate-800 mb-2">Property Highlights</h2>
-          <p className="text-slate-500">Luxury details, privacy, and the estate-scale amenities buyers remember</p>
+          <p className="text-slate-500">Everything you need, nothing you don't</p>
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
